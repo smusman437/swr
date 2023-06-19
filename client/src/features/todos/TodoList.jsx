@@ -29,13 +29,13 @@ const TodoList = () => {
     mutate,
   } = useSWR(cacheKey, getTodos, {
     onSuccess: (data) => data.sort((a, b) => b.id - a.id),
-    // revalidateOnFocus: false,
+    revalidateOnFocus: false,
   });
 
   const addTodoMutation = async (newTodo) => {
     try {
-      //   await addTodo(newTodo);
-      //   mutate();
+      // await addTodo(newTodo);
+      // mutate();
       await mutate(addTodo(newTodo), addTodoOptions(newTodo));
 
       toast.success("Success! Added new item.", {

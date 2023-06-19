@@ -3,7 +3,7 @@ import axios from "axios";
 const delay = () => new Promise((res) => setTimeout(() => res(), 800));
 
 const todosApi = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "http://localhost:3002",
 });
 
 export const todosUrlEndpoint = "/todos";
